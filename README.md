@@ -1,5 +1,5 @@
 # Ro4ActiveSrc
-% Software Ro4ActiveSrc written by Helen Lau (Dalhousie University), kwhlau@dal.ca
+% Software Ro4ActiveSrc written by Helen Lau (Dalhousie University), kwhlau(at)dal.ca
 % v1.0 Initial release at Mar. 25, 2021
 
 There are three main parts of the Ro4ActiveSrc:
