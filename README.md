@@ -48,7 +48,7 @@ Relocation
   
 Rotation
 --------
-- Asumming all analyses have been completed and the correct OBS position and geo-referenced x-axis 
+- Assuming all analyses have been completed and the correct OBS position and geo-referenced x-axis 
   orientation of the OBS have been obtained, the two horizontal components are to be rotated
   to their radial and transverse direction with respect to the source-reeceiver orientation
 - And output text file records the rotation angles used and can be used to undo the results if needed.
