@@ -18,7 +18,7 @@
 clear
 ifprint=1;  % 1 for saving plot
 is_max_correlation=0; % 1 if using correlation values for best fit
-is_handpick=0; % 1 if handpick relocated position from figure
+is_handpick=1; % 1 if handpick relocated position from figure
 
 iobs=18;  % OBS #
 
@@ -208,12 +208,12 @@ switch Line
         hold on
         plot(data.pick_utm(:,1),data.pick_utm(:,2),'+')
         plot(bf_x,bf_y)
-        plot(reloc_x,reloc_y,'r+')
-        plot(reloc_x,reloc_y,'ro')
+        h1=plot(reloc_x,reloc_y,'r+')
+        h2=plot(reloc_x,reloc_y,'ro')
         plot(r_utm(1),r_utm(2),'k+')
         plot(r_utm(1),r_utm(2),'ko')
         text(r_utm(1)+10,r_utm(2)+10,'original')
-        text(reloc_x+10,reloc_y+10,'relocated')
+        h3=text(reloc_x+10,reloc_y+10,'relocated')
         title('RMS residual for direct time (s)')
         xlim([min(X(1,:)) max(X(1,:))])
         ylim([min(Y(:,1)) max(Y(:,1))])
@@ -277,6 +277,10 @@ retry=1;
 if is_handpick
     while retry
        [reloc_x,reloc_y]=ginput(1);
+       delete(h1); delete(h2); delete(h3);
+       h1=plot(reloc_x,reloc_y,'r+');
+       h2=plot(reloc_x,reloc_y,'ro');
+       h3=text(reloc_x+10,reloc_y+10,'relocated');
        retry=input('Retry picking?: [1 or 0]');
     end
 end
